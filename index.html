@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strona Interaktywna</title>
+</head>
+
+<body>
+<h1 id="głownyNagówek">Moja srona interaktywna!</h1>
+<script src= https://code.jquery.com/jquery-2.1.0.js>//jquery</script>
+<script>
+//Wybrany przez urzytkownika nagłówek i wybrane akapity
+var nowyNagłówek = prompt("Podaj nową treść nagłówka:");
+$("#głownyNagówek").text(nowyNagłówek);
+$("body").append("<p>Moje hobby:</p>");
+//pętla dla akapitów
+for (var i = 0; i < 3; i++) {
+var hobby = prompt("Podaj jedno ze swych hobby")
+$("body").append("<p>" + "-" + hobby + "</p>");
+}
+
+ </script>
+ <script>
+//przesuwanie nagłówka
+var przesunięcieZLewej = 0
+
+ var przesuwajNagłówek = function () {
+ $("#głownyNagówek").offset({ left: przesunięcieZLewej });
+
+ przesunięcieZLewej++;
+
+ if (przesunięcieZLewej > 1000) {
+ przesunięcieZLewej = 0	
+   }	
+ };
+ //szybkość przesuwania
+ setInterval(przesuwajNagłówek, 30)	
+ </script>
+</body>
+</html>
